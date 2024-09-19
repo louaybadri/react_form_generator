@@ -1,0 +1,61 @@
+{
+  "pages": [
+    {
+      "id": "welcome",
+      "title": "Welcome",
+      "fields": [],
+      "buttons": [
+        { "label": "Start", "action": "next" }
+      ]
+    },
+    {
+      "id": "personalInfo",
+      "title": "Personal Information",
+      "fields": [
+        { "name": "salutation", "type": "select", "options": ["Mr", "Mrs", "Other"], "required": true },
+        { "name": "firstName", "type": "text", "required": false },
+        { "name": "lastName", "type": "text", "required": true },
+        { "name": "birthdate", "type": "date", "required": false, "validation": { "pastOnly": true } },
+        { "name": "email", "type": "email", "required": true }
+      ],
+      "buttons": [
+        { "label": "Next", "action": "next" }
+      ]
+    },
+    {
+      "id": "vehicleMainInfo",
+      "title": "Vehicle Main Information",
+      "fields": [
+        { "name": "FIN", "type": "text", "required": true },
+        { "name": "licensePlate", "type": "text", "required": false },
+        { "name": "firstRegistrationDate", "type": "date", "required": true, "validation": { "pastOnly": true } },
+        { "name": "moreDetails", "type": "checkbox",
+          "value": true,
+          "label": "I want to enter more details" }
+      ],
+      "buttons": [
+        { "label": "Next", "action": "next" }
+      ]
+    },
+    {
+      "id": "vehicleModelInfo",
+      "title": "Vehicle Model Information",
+      "fields": [
+        { "name": "manufacturer", "type": "text", "required": false },
+        { "name": "carModel", "type": "text", "required": false }
+      ],
+      "conditional": {
+        "field": "moreDetails",
+        "value": true
+      },
+      "buttons": [
+        { "label": "Next", "action": "next" }
+      ]
+    },
+    {
+      "id": "review",
+      "title": "Review",
+      "fields": []
+    }
+  ]
+}

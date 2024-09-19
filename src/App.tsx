@@ -1,26 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState, useContext } from 'react';
 import './App.css';
+import Pages from './pages.json'; // Ensure pages.json is typed correctly or add types
+import GenerateForm from "./components/formGenerator";
+import { FormDataContext, FormDataProvider } from './context/FormContext';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+    return (
+        <div className="App">
+            <GenerateForm />
+        </div>
+    );
 }
 
-export default App;
+export default function AppWithProvider() {
+    return (
+        <FormDataProvider>
+            <App />
+        </FormDataProvider>
+    );
+}
