@@ -1,0 +1,119 @@
+/* formGenerator.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.App{
+    width: 50vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.form {
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+
+
+.review-fields {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* Add an extra column */
+    gap: 10px;
+    width: 100%;
+    border: 1px solid #ccc; /* Add border to the entire grid */
+}
+
+.review-field {
+    display: contents;
+}
+
+.review-field-name,
+.review-field-value,
+.review-field-validation,
+.review-field-remark {
+    padding: 10px;
+    border-right: 1px solid #ccc; /* Add right border to each column */
+}
+
+.review-field-name {
+    text-transform: capitalize;
+    font-weight: bold;
+}
+
+.review-field-value {
+    text-align: left;
+}
+
+.review-field-validation {
+    text-align: left;
+}
+
+.review-field-remark {
+    color: red;
+    font-size: 0.9em;
+}
+
+.review-field-remark {
+    border-right: none;
+}
+
+/* Highlight required fields in red */
+.review-field.required .review-field-name {
+    color: red;
+}
+
+.review-header {
+    padding: 0.5em;
+    margin:auto;
+}
+
+.review-header-title,
+.review-header-value,
+.review-header-validation,
+.review-header-remark {
+    font-weight: bold;
+    text-align: left;
+}

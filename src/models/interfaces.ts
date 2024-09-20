@@ -6,7 +6,6 @@ export interface Page {
     id: string
     title: string
     fields: Field[]
-    buttons?: Button[]
     conditional?: Conditional
 }
 
@@ -21,15 +20,41 @@ export interface Field {
 }
 
 export interface Validation {
-    pastOnly: boolean
-}
-
-export interface Button {
-    label: string
-    action: string
+    type: 'regex' | 'required' | 'pastOnly'| string;
+    pattern?: string;
+    message: string;
 }
 
 export interface Conditional {
-    field: string
-    value: boolean
+    type: 'and' | 'or' | 'not' | 'field'| string;
+    conditions?: Conditional[];
+    field?: string;
+    value?: string;
+}
+
+
+// theme interfaces
+interface LabelStyles {
+    fontSize: string;
+    color: string;
+    border: string;
+}
+
+interface InputFieldStyles {
+    border: string;
+    backgroundColor: string;
+}
+
+interface Theme {
+    primaryColor: string;
+    secondaryColor: string;
+    labelStyles: LabelStyles;
+    inputFieldStyles: InputFieldStyles;
+}
+
+interface StyleConfig {
+    themes: {
+        light: Theme;
+        dark: Theme;
+    };
 }

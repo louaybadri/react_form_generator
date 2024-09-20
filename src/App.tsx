@@ -1,8 +1,6 @@
-import React, { useState, useContext } from 'react';
-import './App.css';
-import Pages from './pages.json'; // Ensure pages.json is typed correctly or add types
+import React from 'react';
+import './styles/App.css';
 import GenerateForm from "./components/formGenerator";
-import { FormDataContext, FormDataProvider } from './context/FormContext';
 
 function App() {
 
@@ -13,10 +11,4 @@ function App() {
     );
 }
 
-export default function AppWithProvider() {
-    return (
-        <FormDataProvider>
-            <App />
-        </FormDataProvider>
-    );
-}
+export default App;

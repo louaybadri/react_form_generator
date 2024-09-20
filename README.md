@@ -1,46 +1,108 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Form Generator
 
-## Available Scripts
+## Overview
+Form Generator is a React-based application designed to dynamically generate forms based on a JSON configuration. It leverages the Context API for state management and Tailwind CSS for styling.
 
-In the project directory, you can run:
+## Technologies Used
+- **React**: For building the user interface.
+- **TypeScript**: For type safety and better developer experience.
+- **Tailwind CSS**: For utility-first CSS styling.
+- **Context API**: For managing global state.
+- **npm**: For package management.
 
-### `npm start`
+## Folder Structure
+```
+src/
+├── components/
+│   ├── GenerateForm.tsx
+│   ├── field_renderer.tsx
+│   └── formGenerator.css
+├── context/
+│   └── FormContext.tsx
+├── hooks/
+│   └── conditional_nav.ts
+├── models/
+│   └── interfaces.ts
+├── pages.json
+├── utils/
+│   ├── evaluateConditions.ts
+│   └── validateField.ts
+└──index.tsx
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Context API
+The Context API is used to manage the form data and navigation state across the application.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### `FormDataContext`
+- **formData**: An object containing the form data.
+- **addFormData**: A function to add new data to the form.
+- **handleNext**: A function to navigate to the next page.
+- **currentPage**: The index of the current page.
 
-### `npm test`
+### `FormDataProvider`
+The `FormDataProvider` component wraps the application and provides the context values to its children.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Components
+### `GenerateForm`
+The main component that generates the form based on the current page configuration.
 
-### `npm run build`
+### `FieldRenderer`
+A component responsible for rendering individual form fields.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### `ReviewPage`
+A component for displaying a review of the form data.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### `WelcomePage`
+A component for displaying the welcome page.
 
-### `npm run eject`
+### `FormPage`
+A component for displaying the form fields for the current page.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Hooks
+### `useConditionalNavigation`
+A custom hook that handles conditional navigation based on the form data and page configuration.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Utilities
+### `evaluateConditions`
+A utility function to evaluate conditional logic for displaying pages or fields.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### `validateField`
+A utility function to validate form fields based on their validation rules.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Styling
+The project uses Tailwind CSS for styling. The `formGenerator.css` file contains additional custom styles.
 
-## Learn More
+## Getting Started
+### Prerequisites
+- Node.js
+- npm
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Installation
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/form-generator.git
+   ```
+2. Navigate to the project directory:
+   ```bash
+   cd form-generator
+   ```
+3. Install the dependencies:
+   ```bash
+   npm install
+   ```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Running the Application
+Start the development server:
+```bash
+npm start
+```
+
+### Building the Application
+Build the application for production:
+```bash
+npm run build
+```
+
+

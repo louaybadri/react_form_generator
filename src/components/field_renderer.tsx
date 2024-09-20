@@ -5,9 +5,8 @@ interface FieldRendererProps {
     field: Field;
 }
 
-const FieldRenderer: React.FC<FieldRendererProps> = ({ field }) => {
-    switch (field.type) {
-        case "text":
+const FieldRenderer: React.FC<FieldRendererProps> = ({ field  }) => {
+    switch (field.type) {        case "text":
             return (
                 <div className="form-group" key={field.name}>
                     <label htmlFor={field.name} className="form-label">{field.label}</label>
