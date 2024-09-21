@@ -41,8 +41,8 @@
           "required": true,
           "validation": {
             "type": "regex",
-            "pattern": "^.{1,5}$",
-            "message": "Last name must be at most 50 characters long"
+            "pattern": "^.{1,10}$",
+            "message": "Last name must be at most 10 characters long"
           }
         },
         {
@@ -70,6 +70,21 @@
     {
       "id": "vehicleMainInfo",
       "title": "Vehicle Main Information",
+      "conditional": {
+        "type": "not",
+        "conditions": [
+          {
+            "type": "field",
+            "field": "firstName",
+            "value": "louay"
+          },
+          {
+            "type":"field",
+            "field": "lastName",
+            "value": "badri"
+          }
+        ]
+      },
       "fields": [
         {
           "name": "FIN",

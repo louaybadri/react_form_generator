@@ -1,108 +1,104 @@
 
 # Form Generator
 
-## Overview
-Form Generator is a React-based application designed to dynamically generate forms based on a JSON configuration. It leverages the Context API for state management and Tailwind CSS for styling.
+This project is a dynamic form generator built with React and TypeScript. It allows for the creation of forms based on a JSON configuration file (`pages.json`).
 
-## Technologies Used
-- **React**: For building the user interface.
-- **TypeScript**: For type safety and better developer experience.
-- **Tailwind CSS**: For utility-first CSS styling.
-- **Context API**: For managing global state.
-- **npm**: For package management.
+## Project Structure
 
-## Folder Structure
 ```
 src/
-├── components/
-│   ├── GenerateForm.tsx
-│   ├── field_renderer.tsx
-│   └── formGenerator.css
-├── context/
-│   └── FormContext.tsx
-├── hooks/
-│   └── conditional_nav.ts
-├── models/
-│   └── interfaces.ts
-├── pages.json
-├── utils/
-│   ├── evaluateConditions.ts
-│   └── validateField.ts
-└──index.tsx
+components/
+field-renderer.tsx
+form-generator.tsx
+context/
+form-context.tsx
+theme-context.tsx
+hooks/
+conditional-nav.ts
+pages/
+welcome.tsx
+review.tsx
+styles/
+form-generator.css
+utils/
+evaluate-conditions.ts
+handle-submit.ts
+pages.json
+style-config.json
 ```
 
-## Context API
-The Context API is used to manage the form data and navigation state across the application.
+## Installation
 
-### `FormDataContext`
-- **formData**: An object containing the form data.
-- **addFormData**: A function to add new data to the form.
-- **handleNext**: A function to navigate to the next page.
-- **currentPage**: The index of the current page.
+To install the project dependencies, run:
 
-### `FormDataProvider`
-The `FormDataProvider` component wraps the application and provides the context values to its children.
+```sh
+npm install
+```
 
-## Components
-### `GenerateForm`
-The main component that generates the form based on the current page configuration.
+## Running the Project
 
-### `FieldRenderer`
-A component responsible for rendering individual form fields.
+To start the development server, run:
 
-
-### `ReviewPage`
-A component for displaying a review of the form data.
-
-### `WelcomePage`
-A component for displaying the welcome page.
-
-### `FormPage`
-A component for displaying the form fields for the current page.
-
-## Hooks
-### `useConditionalNavigation`
-A custom hook that handles conditional navigation based on the form data and page configuration.
-
-## Utilities
-### `evaluateConditions`
-A utility function to evaluate conditional logic for displaying pages or fields.
-
-### `validateField`
-A utility function to validate form fields based on their validation rules.
-
-## Styling
-The project uses Tailwind CSS for styling. The `formGenerator.css` file contains additional custom styles.
-
-## Getting Started
-### Prerequisites
-- Node.js
-- npm
-
-### Installation
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/your-username/form-generator.git
-   ```
-2. Navigate to the project directory:
-   ```bash
-   cd form-generator
-   ```
-3. Install the dependencies:
-   ```bash
-   npm install
-   ```
-
-### Running the Application
-Start the development server:
-```bash
+```sh
 npm start
 ```
 
-### Building the Application
-Build the application for production:
-```bash
-npm run build
-```
+## Components
 
+### FieldRenderer
 
+The `FieldRenderer` component is responsible for rendering different types of form fields based on the configuration provided in the `pages.json` file.
+
+### GenerateForm
+
+The `GenerateForm` component handles the form generation logic, including conditional navigation and form submission.
+
+## Context
+
+### FormDataContext
+
+The `FormDataContext` provides the form data and navigation functions to the components.
+
+### ThemeContext
+
+The `ThemeContext` provides theming information to style the form components.
+
+## Hooks
+
+### useConditionalNavigation
+
+The `useConditionalNavigation` hook handles the conditional navigation logic based on the form data and the conditions specified in the `pages.json` file.
+
+## Utilities
+
+### evaluateConditions
+
+The `evaluateConditions` utility function evaluates the conditions specified in the `pages.json` file to determine whether a page should be displayed.
+
+### handleSubmit
+
+The `handleSubmit` utility function handles the form submission logic, including validation and data aggregation.
+
+## Pages
+
+### WelcomePage
+
+The `WelcomePage` component renders the welcome page of the form.
+
+### ReviewPage
+
+The `ReviewPage` component renders the review page, displaying all the form data for final review before submission.
+
+## Styles
+
+The project uses a CSS file (`form-generator.css`) for styling the form components.
+
+## Configuration
+
+### pages.json
+
+The `pages.json` file contains the configuration for the form pages, including fields, buttons, and conditional logic.
+
+### style-config.json
+
+The `style-config.json` file contains the theming information used by the `ThemeContext`.

@@ -1,5 +1,5 @@
 import { Conditional } from "../models/interfaces";
-import { FormDataContextType } from "../context/FormContext";
+import { FormDataContextType } from "../context/form_context";
 
 export const evaluateCondition = (condition: Conditional, formData: FormDataContextType["formData"]): boolean => {
     switch (condition.type) {

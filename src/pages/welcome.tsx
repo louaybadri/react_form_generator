@@ -1,8 +1,10 @@
 import React from "react";
+import {useTheme} from "../context/theme_context";
 
-const  WelcomePage: React.FC<{ handleNext: () => void }> = ({ handleNext }) => (
-    <>
-        <svg className="w-32 xl:w-48" fill="currentColor" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1476.59 219.93">
+const  WelcomePage: React.FC<{ handleNext: () => void }> = ({ handleNext }) => {
+    const {theme} = useTheme();
+    return <>
+        <svg className="w-72 xl:w-148" fill={theme.primaryColor} id="Ebene_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1476.59 219.93">
             <path d="M41.55,129.34v90.6H0V0H226.18V32.49H41.55V96.85H213.69v32.49H41.55Z"></path>
             <path className="cls-1" d="M244.21,219.93V0h41.55V219.93h-41.55Z"></path>
             <path d="M578.7,219.93L465.3,42.8l-115.28,177.13h-46.24L449.99,0h30.3l145.27,219.93h-46.86Z"></path>
@@ -13,7 +15,7 @@ const  WelcomePage: React.FC<{ handleNext: () => void }> = ({ handleNext }) => (
         <br/>
         <button onClick={handleNext} className="btn btn-success">Start</button>
     </>
-);
+};
 
 
 export default WelcomePage;

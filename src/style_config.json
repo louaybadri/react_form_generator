@@ -1,0 +1,32 @@
+{
+  "themes": {
+    "light": {
+      "name": "light",
+      "primaryColor": "#000000",
+      "secondaryColor": "#FFFFFF",
+      "labelStyles": {
+        "fontSize": "16px",
+        "color": "#000000"
+      },
+      "inputFieldStyles": {
+        "border": "1px solid #000000",
+        "backgroundColor": "#FFFFFF",
+        "color": "#000000"
+      }
+    },
+    "dark": {
+      "name": "dark",
+      "primaryColor": "#FFFFFF",
+      "secondaryColor": "#000000",
+      "labelStyles": {
+        "fontSize": "16px",
+        "color": "#FFFFFF"
+      },
+      "inputFieldStyles": {
+        "border": "1px solid #FFFFFF",
+        "backgroundColor": "#000000",
+        "color": "#FFFFFF"
+      }
+    }
+  }
+}

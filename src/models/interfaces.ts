@@ -37,7 +37,7 @@ export interface Conditional {
 interface LabelStyles {
     fontSize: string;
     color: string;
-    border: string;
+    border?: string;
 }
 
 interface InputFieldStyles {
@@ -45,14 +45,16 @@ interface InputFieldStyles {
     backgroundColor: string;
 }
 
-interface Theme {
+export interface Theme {
+    name: string;
     primaryColor: string;
     secondaryColor: string;
     labelStyles: LabelStyles;
     inputFieldStyles: InputFieldStyles;
+    color?: string;
 }
 
-interface StyleConfig {
+export interface StyleConfig {
     themes: {
         light: Theme;
         dark: Theme;
