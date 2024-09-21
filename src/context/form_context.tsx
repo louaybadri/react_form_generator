@@ -1,6 +1,6 @@
 import React, { createContext, useState, ReactNode } from 'react';
 
-import Pages from '../pages.json';
+import Pages from '../config/pages';
 export interface FormDataContextType {
     formData: { [key: string]: FormDataEntryValue };
     addFormData: (newData: { [key: string]: FormDataEntryValue }) => void;

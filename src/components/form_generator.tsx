@@ -1,12 +1,12 @@
 import React, { useContext, useState } from "react";
 import "../styles/form_generator.css";
 import { FormDataContext } from "../context/form_context";
-import Pages from '../pages.json';
-import { evaluateCondition } from "../utils/evaluateConditions";
+import Pages from "../config/pages";
+import { evaluateCondition } from "../utils/evaluate_conditions";
 import useConditionalNavigation from "../hooks/conditional_nav";
 import WelcomePage from "../pages/welcome";
 import ReviewPage from "../pages/review";
-import handleSubmit from "../utils/handleSubmit";
+import handleSubmit from "../utils/handle_submit";
 import { useTheme } from "../context/theme_context";
 import FieldRenderer from "./field_renderer";
 

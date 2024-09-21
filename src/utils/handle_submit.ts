@@ -1,5 +1,5 @@
 import {Field, Page} from "../models/interfaces";
-import {validateField} from "./validateField";
+import {validateField} from "./validate_field";
 import React from "react";
 
 const handleSubmit = (e: React.FormEvent<HTMLFormElement>, page: Page, addFormData: (data: any) => void, handleNext: () => void, setErrors: React.Dispatch<React.SetStateAction<{ [key: string]: string[] }>>) => {

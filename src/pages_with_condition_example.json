@@ -58,6 +58,21 @@
     {
       "id": "vehicleMainInfo",
       "title": "Vehicle Main Information",
+      "conditional": {
+        "type": "not",
+        "conditions": [
+          {
+            "type": "field",
+            "field": "firstName",
+            "value": "louay"
+          },
+          {
+            "type":"field",
+            "field": "lastName",
+            "value": "badri"
+          }
+        ]
+      },
       "fields": [
         {
           "name": "FIN",
